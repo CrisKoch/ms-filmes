@@ -1,0 +1,5 @@
+package com.kochmann.moviecatalogservice.resources;
+
+public class CatalogResource {
+
+}

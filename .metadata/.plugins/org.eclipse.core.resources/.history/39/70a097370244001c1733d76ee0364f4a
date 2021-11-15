@@ -1,0 +1,6 @@
+package com.kochmann.moviecatalogservice.models;
+
+public class CatalogItem {
+	private String name;
+	private String desc;
+}
