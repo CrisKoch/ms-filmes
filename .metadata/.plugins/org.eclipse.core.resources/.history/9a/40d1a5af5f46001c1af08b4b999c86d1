@@ -1,0 +1,5 @@
+package com.kochmann.movieinfoservice.resources;
+
+public class MovieResource {
+
+}

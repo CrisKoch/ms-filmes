@@ -1,0 +1,6 @@
+package com.kochmann.movieinfoservice.model;
+
+public class Movie {
+	
+	private String movie
+}
