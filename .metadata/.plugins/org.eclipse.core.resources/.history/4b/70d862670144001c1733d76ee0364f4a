@@ -1,6 +1,0 @@
-package com.kochmann.moviecatalogservice.resources;
-
-@RestController
-public class CatalogResource {
-
-}

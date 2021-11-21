@@ -1,0 +1,7 @@
+package com.kochmann.ratingsdataservice.resources;
+
+@RestController
+@RequestMapping
+public class RatingsResource {
+
+}

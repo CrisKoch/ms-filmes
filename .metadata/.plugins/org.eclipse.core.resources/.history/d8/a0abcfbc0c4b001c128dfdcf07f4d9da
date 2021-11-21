@@ -1,0 +1,8 @@
+package com.kochmann.ratingsdataservice.models;
+
+public class Rating {
+	
+	private String movieId;
+	private int rating;
+	
+}

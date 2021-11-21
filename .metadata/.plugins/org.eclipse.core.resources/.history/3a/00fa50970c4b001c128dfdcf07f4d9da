@@ -1,0 +1,10 @@
+package com.kochmann.ratingsdataservice.resources;
+
+@RestController
+@RequestMapping("/ratingsdata")
+public class RatingsResource {
+	@RequestMapping("/{movieId}")
+	public Rating getRating(@PathVariable("movieId") String movieId) {
+		
+	}
+}

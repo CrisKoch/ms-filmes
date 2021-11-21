@@ -26,9 +26,9 @@ INDEX VERSION 1.131+C:\Users\giuli\OneDrive\Área de Trabalho\4º PERÍODO\Back\.me
 315141986.index
 309141623.index
 3264411506.index
-1290134378.index
-1092875316.index
 49921290.index
+1092875316.index
+1290134378.index
 3355665013.index
 2334635113.index
 12686662.index
