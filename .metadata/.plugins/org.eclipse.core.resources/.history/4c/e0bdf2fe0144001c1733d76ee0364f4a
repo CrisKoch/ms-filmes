@@ -1,9 +1,0 @@
-package com.kochmann.moviecatalogservice.resources;
-
-import org.springframework.web.bind.annotation.RestController;
-
-@RestController
-public class CatalogResource {
-	
-	public List<CatalogItem> getCatalog(String userId)
-}
