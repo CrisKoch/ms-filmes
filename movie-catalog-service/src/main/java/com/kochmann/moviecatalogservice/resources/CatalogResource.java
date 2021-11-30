@@ -1,6 +1,5 @@
 package com.kochmann.moviecatalogservice.resources;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -12,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.kochmann.moviecatalogservice.models.CatalogItem;
 import com.kochmann.moviecatalogservice.models.Movie;
-import com.kochmann.moviecatalogservice.models.Rating;
+import com.kochmann.moviecatalogservice.models.UserRating;
 
 @RestController
 @RequestMapping("/catalog")
@@ -27,20 +26,25 @@ public class CatalogResource {
 	 */
 	@Autowired
 	private RestTemplate restTemplate = new RestTemplate();
-
+	
+	//@Autowired
+	//private DiscoveryClient discoveryClient;
+	
 	@RequestMapping("/{userId}")
 	public List<CatalogItem> getCatalog(@PathVariable("userId") String userId) {
 
 		// 1) Obter todos os movies IDs
 
-		List<Rating> ratings = Arrays.asList(new Rating("12", 5), new Rating("15", 2));
+		// List<Rating> ratings = Arrays.asList(new Rating("12", 5), new Rating("15",
+		
+		UserRating userRating = restTemplate.getForObject("http://ratings-data-service/ratingsdata/users/ " + userId,
+				UserRating.class);
 
-	
-		return ratings.stream().map(rating -> {
-			
+		return userRating.getRatings().stream().map(rating -> {
+
 			// 2) Para cada movie Id, chamar movie info service e get details
-			
-			Movie movie = restTemplate.getForObject("http://localhost:8082/movies/ " + rating.getMovieId(),
+
+			Movie movie = restTemplate.getForObject("http://movie-info-service/movies/ " + rating.getMovieId(),
 					Movie.class);
 
 			return new CatalogItem(movie.getName(), "filmao", rating.getRating());
