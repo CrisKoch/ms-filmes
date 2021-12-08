@@ -8,11 +8,18 @@ public class Movie {
 
 	// Aqui indica como esta classe poderá ser acessada
 	public Movie(String movieId, String name, String description) {
-		super();
 		this.movieId = movieId;
 		this.name = name;
 		this.description = description;
 	}
+
+
+	// obj vazio, acessado depois populado
+	public Movie() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
 
 	public String getDescription() {
 		return description;
@@ -20,12 +27,6 @@ public class Movie {
 
 	public void setDescription(String description) {
 		this.description = description;
-	}
-
-	// obj vazio, acessado depois populado
-	public Movie() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public String getMovieId() {

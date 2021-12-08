@@ -25,7 +25,7 @@ public class CatalogResource {
 	 * um BEAN desse RestTemplate e o inject precisa desse dados e é injetado aqui
 	 */
 	@Autowired
-	private RestTemplate restTemplate = new RestTemplate();
+	private RestTemplate restTemplate;
 	
 	//@Autowired
 	//private DiscoveryClient discoveryClient;
@@ -34,10 +34,8 @@ public class CatalogResource {
 	public List<CatalogItem> getCatalog(@PathVariable("userId") String userId) {
 
 		// 1) Obter todos os movies IDs
-
-		// List<Rating> ratings = Arrays.asList(new Rating("12", 5), new Rating("15",
 		
-		UserRating userRating = restTemplate.getForObject("http://ratings-data-service/ratingsdata/users/ " + userId,
+		UserRating userRating = restTemplate.getForObject("http://ratings-data-service/ratingsdata/user/ " + userId,
 				UserRating.class);
 
 		return userRating.getRatings().stream().map(rating -> {

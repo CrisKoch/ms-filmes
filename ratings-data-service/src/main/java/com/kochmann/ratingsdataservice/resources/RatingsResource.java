@@ -1,8 +1,5 @@
 package com.kochmann.ratingsdataservice.resources;
 
-import java.util.Arrays;
-import java.util.List;
-
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,17 +11,17 @@ import com.kochmann.ratingsdataservice.models.UserRating;
 @RequestMapping("/ratingsdata")
 public class RatingsResource {
 
-	@RequestMapping("/{movieId}")
-	public Rating getRating(@PathVariable("movieId") String movieId) {
+	@RequestMapping("/movies/{movieId}")
+	public Rating getMovieRating(@PathVariable("movieId") String movieId) {
 		return new Rating(movieId, 4);
 	}
 
-	@RequestMapping("users/{userId}")
-	public List<Rating> getUserRating(@PathVariable("userId") String userId) {
-		List<Rating> ratings = Arrays.asList(new Rating("1234", 15), new Rating("1541", 20));
+	@RequestMapping("/user/{userId}")
+	public UserRating getUserRatings(@PathVariable("userId") String userId) {
+		
 		UserRating userRating = new UserRating();
-		userRating.setUserRating(ratings);
+		userRating.initData(userId);
 
-		return ratings;
+		return userRating;
 	}
 }

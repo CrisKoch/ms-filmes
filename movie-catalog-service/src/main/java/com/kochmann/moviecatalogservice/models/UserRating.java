@@ -7,16 +7,7 @@ public class UserRating {
 	private String userId;
 	private List<Rating> ratings;
 
-	public UserRating() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public UserRating(String userId, List<Rating> ratings) {
-		
-		this.userId = userId;
-		this.ratings = ratings;
-	}
+	
 
 	public String getUserId() {
 		return userId;
